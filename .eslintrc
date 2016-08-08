@@ -1,8 +1,7 @@
 {
   "parser"  : "babel-eslint",
   "extends" : [
-    "standard",
-    "standard-react"
+    "airbnb"
   ],
   "plugins": [
     "babel",
@@ -21,9 +20,23 @@
   },
   "rules": {
     "semi" : [2, "never"],
-    "max-len": [2, 120, 2],
-    "generator-star-spacing": 0,
-    "babel/generator-star-spacing": 1,
-    "jsx-quotes": [2, "prefer-single"]
-  }
+    "max-len": [1, {"ignoreComments": true, "ignoreTrailingComments": true }, 2],
+    'func-names': 'off',
+    'prefer-arrow-callback': 'off',
+    'no-console': 'off',
+    'no-undef': 'off',
+    'generator-star-spacing': 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prefer-stateless-function": 0,
+    "jsx-quotes": ["warn", "prefer-single"],
+    "import/imports-first": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-named-as-default": 0,
+    "import/newline-after-import": 0,
+    "arrow-body-style": [0, "as-needed"],
+    "global-require": 0,
+    "no-underscore-dangle": 0,
+    "new-cap": 0,
+    "no-param-reassign": 1,
+  },
 }
