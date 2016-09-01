@@ -5,6 +5,7 @@ import { useRouterHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import createStore from './store/createStore'
 import AppContainer from './containers/AppContainer'
+import { ROUTE_PREFIX } from './constants'
 
 // ========================================================
 // Browser History Setup
@@ -40,8 +41,28 @@ if (__DEBUG__) {
 // ========================================================
 const MOUNT_NODE = document.getElementById('root')
 
+// ========================================================
+// Router prefix
+// ========================================================
+const filterRouterPrefix = (routes, prefix = null) => {
+  if(prefix.length && routes.childRoutes && Array.isArray(routes.childRoutes)) {
+    const indexPath = routes.path === '/' ? '' : routes.path
+    routes = {
+      ...routes,
+      {
+        path: `/${prefix}${indexPath}`,
+        childRoutes: routes.childRoutes.map(item =>
+          { ...item, path: `/${prefix}/${item.path}` })
+      }
+    }
+  }
+
+  return routes
+}
+
 let render = () => {
-  const routes = require('./routes/index').default(store)
+  let routes = require('./routes/index').default(store)
+  routes = filterRouterPrefix(routes, ROUTE_PREFIX)
 
   ReactDOM.render(
     <AppContainer
