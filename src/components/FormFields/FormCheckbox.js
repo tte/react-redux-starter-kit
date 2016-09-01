@@ -25,5 +25,5 @@ FormCheckbox.PropTypes = {
   label: React.PropTypes.string,
   name: React.PropTypes.string.isRequired,
   value: React.PropTypes.bool.isRequired,
-  changeHandler: React.PropTypes.func,
+  changeHandler: React.PropTypes.func.isRequired
 }

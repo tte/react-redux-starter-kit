@@ -39,6 +39,7 @@ FormInput.PropTypes = {
   type: React.PropTypes.string,
   value: React.PropTypes.string.isRequired,
   placeholder: React.PropTypes.string,
-  changeHandler: React.PropTypes.func,
+  changeHandler: React.PropTypes.func.isRequired,
+  disabled: React.PropTypes.bool,
   columnSize: React.PropTypes.number
 }

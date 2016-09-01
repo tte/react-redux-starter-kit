@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Pagination(props) {
   const { handleClick, show } = props
   return show
@@ -9,4 +10,9 @@ export default function Pagination(props) {
         </button>
       </div>
     : false
+}
+
+Pagination.PropTypes = {
+  handleClick: React.PropTypes.func.isRequired,
+  show: React.PropTypes.bool.isRequired
 }

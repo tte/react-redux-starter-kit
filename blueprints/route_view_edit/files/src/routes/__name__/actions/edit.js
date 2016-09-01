@@ -3,13 +3,7 @@ import {
   validateResponse,
   handleError,
   isValidateError } from 'helpers/response'
-import {
-  <%= pascalEntityName.toUpperCase() %>__INIT_FORM,
-  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL,
-  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEM_RESPONSE,
-  <%= pascalEntityName.toUpperCase() %>__UPDATE,
-  <%= pascalEntityName.toUpperCase() %>__UPDATE_ITEM_RESPONSE,
-  <%= pascalEntityName.toUpperCase() %>__FORM_FIELD_CHANGE } from '../constants'
+import constants from '../constants'
 import BaseActions from 'actions'
 import { failed, inProgress } from './index'
 import { createRoute } from 'helpers/route'
@@ -18,7 +12,7 @@ import { request } from 'helpers/request'
 
 export function initForm(payload) {
   return {
-    type: <%= pascalEntityName.toUpperCase() %>__INIT_FORM,
+    type: constants.<%= pascalEntityName.toUpperCase() %>__INIT_FORM,
     payload: payload
   }
 }
@@ -26,7 +20,7 @@ export function initForm(payload) {
 export function fetchItem(id, action = fetchItemResponse) {
   return (dispatch, getState) => {
     dispatch(inProgress())
-    return request(`${<%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL}/${id}`, 'GET')
+    return request(`${constants.<%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL}/${id}`, 'GET')
       .then(validateResponse)
       .then(res => res.json())
       .then(payload => dispatch(action(payload)))
@@ -37,13 +31,13 @@ export function fetchItem(id, action = fetchItemResponse) {
 
 export function fetchItemResponse(payload) {
   return {
-    type: <%= pascalEntityName.toUpperCase() %>__FETCH_ITEM_RESPONSE,
+    type: constants.<%= pascalEntityName.toUpperCase() %>__FETCH_ITEM_RESPONSE,
     payload
   }
 }
 
 export function onTextFieldChange({ name }, value) {
-  return BaseActions['onTextFieldChange'](<%= pascalEntityName.toUpperCase() %>__FORM_FIELD_CHANGE, name, value)
+  return BaseActions['onTextFieldChange'](constants.<%= pascalEntityName.toUpperCase() %>__FORM_FIELD_CHANGE, name, value)
 }
 
 export function onSubmit() {
@@ -51,7 +45,7 @@ export function onSubmit() {
     const { <%= pascalEntityName.toLowerCase() %>: { form } } = getState()
     const { id } = form
     dispatch(inProgress())
-    return request(`${<%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL}/${id}`, 'PATCH', JSON.stringify(form))
+    return request(`${constants.<%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL}/${id}`, 'PATCH', JSON.stringify(form))
       .then(validateResponse)
       .then(res => res.json())
       .then(payload => dispatch(onSubmitResponse(payload)))
@@ -69,7 +63,7 @@ export function onSubmitResponse(payload) {
 
 export function onUpdateResponse(payload) {
   return {
-    type: <%= pascalEntityName.toUpperCase() %>__UPDATE_ITEM_RESPONSE,
+    type: constants.<%= pascalEntityName.toUpperCase() %>__UPDATE_ITEM_RESPONSE,
     payload
   }
 }

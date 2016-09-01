@@ -34,3 +34,27 @@ export const <%= pascalEntityName.toUpperCase() %>__PAGINATION_ITEMS = '<%= pasc
 export const <%= pascalEntityName.toUpperCase() %>__FORM_DEFAULT_STATE = {
   'key' : 'value'
 }
+
+export default {
+  <%= pascalEntityName.toUpperCase() %>__FAILED,
+  <%= pascalEntityName.toUpperCase() %>__IN_PROGRESS,
+  <%= pascalEntityName.toUpperCase() %>__INIT_FORM,
+  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEM_RESPONSE,
+  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL,
+  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_RESPONSE,
+  <%= pascalEntityName.toUpperCase() %>__CREATE,
+  <%= pascalEntityName.toUpperCase() %>__UPDATE,
+  <%= pascalEntityName.toUpperCase() %>__DELETE,
+  <%= pascalEntityName.toUpperCase() %>__UPDATE_ITEM_RESPONSE,
+  <%= pascalEntityName.toUpperCase() %>__DELETE_ITEM_RESPONSE,
+  <%= pascalEntityName.toUpperCase() %>__FORM_FIELD_CHANGE,
+  <%= pascalEntityName.toUpperCase() %>__COLUMNS,
+  <%= pascalEntityName.toUpperCase() %>__COLUMNS_LABELS,
+  <%= pascalEntityName.toUpperCase() %>__SORT_FIELD,
+  <%= pascalEntityName.toUpperCase() %>__SORT_FIELDS,
+  <%= pascalEntityName.toUpperCase() %>__FILTER_FIELD,
+  <%= pascalEntityName.toUpperCase() %>__FILTER_FIELDS,
+  <%= pascalEntityName.toUpperCase() %>__UPDATE_PAGINATION_LINK,
+  <%= pascalEntityName.toUpperCase() %>__PAGINATION_ITEMS,
+  <%= pascalEntityName.toUpperCase() %>__FORM_DEFAULT_STATE
+}

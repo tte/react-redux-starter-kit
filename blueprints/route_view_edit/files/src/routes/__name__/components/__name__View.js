@@ -5,11 +5,7 @@ import Pagination from 'components/Pagination'
 import LoadingOverlay from 'components/LoadingOverlay'
 import Controls from './<%= pascalEntityName %>Controls'
 import <%= pascalEntityName %>ViewTableActions from './<%= pascalEntityName %>ViewTableActions'
-import {
-  <%= pascalEntityName.toUpperCase() %>__COLUMNS,
-  <%= pascalEntityName.toUpperCase() %>__COLUMNS_LABELS,
-  <%= pascalEntityName.toUpperCase() %>__SORT_FIELDS,
-  <%= pascalEntityName.toUpperCase() %>__FILTER_FIELDS } from '../constants'
+import constants from '../constants'
 
 
 export default function <%= pascalEntityName %>View(props) {
@@ -27,16 +23,16 @@ export default function <%= pascalEntityName %>View(props) {
       <Controls {...props}/>
       <Table
         items={items}
-        columns={<%= pascalEntityName.toUpperCase() %>__COLUMNS}
-        columnsLabels={<%= pascalEntityName.toUpperCase() %>__COLUMNS_LABELS}
+        columns={constants.<%= pascalEntityName.toUpperCase() %>__COLUMNS}
+        columnsLabels={constants.<%= pascalEntityName.toUpperCase() %>__COLUMNS_LABELS}
         actions={{
           component: <%= pascalEntityName %>ViewTableActions,
         }}
         sortable={true}
         sort={sort}
         sortBy={sortBy}
-        sortableColumns={<%= pascalEntityName.toUpperCase() %>__SORT_FIELDS}
-        filterColumns={<%= pascalEntityName.toUpperCase() %>__FILTER_FIELDS}
+        sortableColumns={constants.<%= pascalEntityName.toUpperCase() %>__SORT_FIELDS}
+        filterColumns={constants.<%= pascalEntityName.toUpperCase() %>__FILTER_FIELDS}
         filterChange={filter}
         filters={filters}
       />

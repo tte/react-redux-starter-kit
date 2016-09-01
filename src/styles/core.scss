@@ -1,3 +1,7 @@
+$icon-font-path: "../../node_modules/bootstrap-sass/assets/fonts/bootstrap/" !default;
+$icon-font-name: "glyphicons-halflings-regular" !default;
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
 :global {
   @import 'base';
   @import '~normalize.css/normalize';

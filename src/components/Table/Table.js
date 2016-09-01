@@ -35,7 +35,7 @@ const Table = (props) => {
 }
 
 Table.propTypes = {
-  items: React.PropTypes.array,
+  items: React.PropTypes.array.isRequired,
   columns: React.PropTypes.array.isRequired,
   columnsLabels: React.PropTypes.object,
   actions: React.PropTypes.shape({

@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react'
 import { Router } from 'react-router'
 import { Provider } from 'react-redux'
 
+
 class AppContainer extends Component {
   static propTypes = {
     history: PropTypes.object.isRequired,

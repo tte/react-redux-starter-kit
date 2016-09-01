@@ -55,7 +55,6 @@ export default function TableHeader(props) {
 }
 
 TableHeader.propTypes = {
-  items: React.PropTypes.array,
   columns: React.PropTypes.array.isRequired,
   columnsLabels: React.PropTypes.object,
   actions: React.PropTypes.shape({

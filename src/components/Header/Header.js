@@ -40,4 +40,8 @@ export const Header = ({ location }) => (
   </div>
 )
 
+Header.PropTypes = {
+  location: React.PropTypes.object.isRequired
+}
+
 export default Header

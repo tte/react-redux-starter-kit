@@ -4,15 +4,11 @@ import {
   isValidateError,
   parseLinkHeader } from 'helpers/response'
 import { inProgress, failed } from './index'
-import {
-  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL,
-  <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_RESPONSE,
-  <%= pascalEntityName.toUpperCase() %>__UPDATE_PAGINATION_LINK,
-  <%= pascalEntityName.toUpperCase() %>__PAGINATION_ITEMS } from '../constants'
+import constants from '../constants'
 import { request } from 'helpers/request'
 
 
-export function fetchItems(url = <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL, action = fetchItemsResponse) {
+export function fetchItems(url = constants.<%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_URL, action = fetchItemsResponse) {
   return (dispatch, getState) => {
     dispatch(inProgress())
     return new Promise(function(resolve, reject) {
@@ -36,7 +32,7 @@ export function fetchItems(url = <%= pascalEntityName.toUpperCase() %>__FETCH_IT
 export function updatePaginationLink(linkHeader = null) {
   const links = parseLinkHeader(linkHeader)
   return {
-    type: <%= pascalEntityName.toUpperCase() %>__UPDATE_PAGINATION_LINK,
+    type: constants.<%= pascalEntityName.toUpperCase() %>__UPDATE_PAGINATION_LINK,
     link: links && links.next
       ? links.next
       : links
@@ -45,7 +41,7 @@ export function updatePaginationLink(linkHeader = null) {
 
 export function fetchItemsResponse(json) {
   return {
-    type: <%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_RESPONSE,
+    type: constants.<%= pascalEntityName.toUpperCase() %>__FETCH_ITEMS_RESPONSE,
     payload: json
   }
 }
@@ -61,7 +57,7 @@ export function paginate() {
 
 export function paginationItemsResponse(json) {
   return {
-    type: <%= pascalEntityName.toUpperCase() %>__PAGINATION_ITEMS,
+    type: constants.<%= pascalEntityName.toUpperCase() %>__PAGINATION_ITEMS,
     payload: json
   }
 }
