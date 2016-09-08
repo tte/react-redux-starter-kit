@@ -28,7 +28,7 @@ const ACTION_HANDLERS = {
   }),
   [constants.<%= pascalEntityName.toUpperCase() %>__INIT_FORM]: (state, { payload }) => ({
     ...state,
-    form: payload || <%= pascalEntityName.toUpperCase() %>__FORM_DEFAULT_STATE,
+    form: payload || constants.<%= pascalEntityName.toUpperCase() %>__FORM_DEFAULT_STATE,
     error: null
   }),
   [constants.<%= pascalEntityName.toUpperCase() %>__FETCH_ITEM_RESPONSE]: (state, { payload }) => ({

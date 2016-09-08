@@ -44,7 +44,7 @@ export default function <%= pascalEntityName %>View(props) {
 
 <%= pascalEntityName %>View.propTypes = {
   items: React.PropTypes.array.isRequired,
-  sort: React.PropTypes.object,
+  sort: React.PropTypes.array,
   sortBy: React.PropTypes.func,
   showPagination: React.PropTypes.bool,
   paginate: React.PropTypes.func,

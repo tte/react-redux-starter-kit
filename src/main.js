@@ -49,11 +49,9 @@ const filterRouterPrefix = (routes, prefix = null) => {
     const indexPath = routes.path === '/' ? '' : routes.path
     routes = {
       ...routes,
-      {
-        path: `/${prefix}${indexPath}`,
-        childRoutes: routes.childRoutes.map(item =>
-          { ...item, path: `/${prefix}/${item.path}` })
-      }
+      path: `/${prefix}${indexPath}`,
+      childRoutes: routes.childRoutes.map(item =>
+        ({ ...item, path: `/${prefix}/${item.path}` }))
     }
   }
 

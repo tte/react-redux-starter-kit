@@ -1,8 +1,10 @@
+export const APP_NAME = 'Your app name'
+
 export const BASE_URL = process.env.NODE_ENV === 'production'
   ? window.location.origin
-  : 'http://example.com'
+  : 'https://jsonplaceholder.typicode.com'
 
-export const API_URL = `${BASE_URL}/admin`
+export const API_URL = `${BASE_URL}`
 export const ROUTE_PREFIX = 'admin'
 
 export const LOCAL_STORAGE_CREDENTIALS = '_your_awesome_safe_name'

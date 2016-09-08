@@ -1,4 +1,4 @@
-import { API_URL } from '../../../constants'
+import { API_URL } from 'constants'
 
 export const <%= pascalEntityName.toUpperCase() %>__FAILED = '<%= pascalEntityName.toUpperCase() %>__FAILED'
 export const <%= pascalEntityName.toUpperCase() %>__IN_PROGRESS = '<%= pascalEntityName.toUpperCase() %>__IN_PROGRESS'
@@ -19,7 +19,7 @@ export const <%= pascalEntityName.toUpperCase() %>__FORM_FIELD_CHANGE = '<%= pas
 
 export const <%= pascalEntityName.toUpperCase() %>__COLUMNS = []
 export const <%= pascalEntityName.toUpperCase() %>__COLUMNS_LABELS = {
-  'key' : 'value'
+  'actions' : 'Actions'
 }
 
 export const <%= pascalEntityName.toUpperCase() %>__SORT_FIELD = '<%= pascalEntityName.toUpperCase() %>__SORT_FIELD'
