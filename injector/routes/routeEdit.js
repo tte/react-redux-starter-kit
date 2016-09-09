@@ -7,8 +7,8 @@ const b = recast.types.builders
 
 /**
  * [handler]
- * @param  {string} name [description]
- * @return {func}     [description]
+ * @param  {string} name
+ * @return {func}
  */
 export function handler(name) {
   return function(ast) {
@@ -41,7 +41,7 @@ export function handler(name) {
 /**
  * [insertRoute]
  * @param  {Object} ast
- * @param  {Object[]} route
+ * @param  {Object[]} routes
  * @return {Object}
  */
 function insertRoutes(ast, routes) {

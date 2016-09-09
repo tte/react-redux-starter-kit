@@ -4,7 +4,7 @@ import recast from 'recast'
 /**
  * [injector]
  * @param  {string} filename
- * @param  {function} handler
+ * @param  {Promise} handler
  */
 export default function injector(filename, handler) {
   return new Promise(function(resolve) {
