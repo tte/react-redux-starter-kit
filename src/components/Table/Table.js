@@ -22,7 +22,7 @@ const Table = (props) => {
   const body = <TableBody {...props} columns={filteredColumns}/>
   const tableClass = styles && styles.className
     ? styles.className
-    : "table table-bordered"
+    : "table table-striped"
 
   return items.length
     ? (<table className={ tableClass }>
@@ -39,7 +39,7 @@ Table.propTypes = {
   columns: React.PropTypes.array.isRequired,
   columnsLabels: React.PropTypes.object,
   actions: React.PropTypes.shape({
-    component: React.PropTypes.func,
+    component: React.PropTypes.func
   }),
   sortable: React.PropTypes.bool,
   sort: React.PropTypes.array,
@@ -52,8 +52,8 @@ Table.propTypes = {
   hideHeader: React.PropTypes.bool,
   hideNoItemsMessage: React.PropTypes.bool,
   styles: React.PropTypes.shape({
-    className: React.PropTypes.string,
-  }),
+    className: React.PropTypes.string
+  })
 }
 
 export default Table

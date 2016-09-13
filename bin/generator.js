@@ -12,34 +12,36 @@ function run() {
 function init() {
   program
     .version('0.0.1')
-    .option('-b, --blueprint <type>', 'Name of blueprint', /^(route-edit)$/i, 'route-edit')
+    .option('-b, --blueprint <type>', 'Name of blueprint', /^(route-crud|route-view)$/i, 'route-crud')
     .option('-n, --name <name>', 'Name for new element')
-    .option('-L, --no-lint', 'Disable eslint fix after injection')
+    .option('-l, --lint', 'Disable eslint fix after injection', true)
     .parse(process.argv)
 }
 
 function validate() {
-  debug('init with params:')
   const { blueprint, name, lint } = program
-  // console.log('noLint', lint, program)
-  if (blueprint) debug('  - blueprint: %s', blueprint)
-  if (name) debug('  - name: %s', name, program.name)
-  if (!lint) debug('  - no-lint', !lint)
+  const validateName = typeof name !== 'function'
 
-  if(blueprint && name)
-    handle(blueprint, name, lint)
+  debug('init with params:')
+
+  if (blueprint) debug('  - blueprint: %s', blueprint)
+  if (name) debug('  - name: %s', validateName ? name : '<not-set>')
+  debug('  - lint: %s', !!lint) // /^(true|false)$/i,
+
+  if(blueprint && name && validateName)
+    handle(blueprint, name, !!lint)
   else {
     debug('error: params `blueprint` and `name` required')
-    process.exit(1)
+    process.exit(0)
   }
 }
 
-function handle(blueprint, name, noLint = false) {
+function handle(blueprint, name, lint = true) {
   debug('blueprint %s processing...', blueprint)
   child_process.execSync(`redux g ${blueprint} ${name}`)
   child_process.execSync(
     `npm run inject -- --blueprint ${blueprint} --name ${name}` +
-    (noLint ? ' --no-lint' : ''))
+    (!lint ? ' --lint false' : ''))
   debug('finished')
   process.exit(0)
 }

@@ -5,6 +5,7 @@ import {
   HEADER_ROUTES,
   HEADER_ROUTES_LABELS } from '../../constants'
 import HeaderItem from './HeaderItem'
+import { capitalize } from 'helpers/utils'
 
 
 export const Header = ({ location }) => (
@@ -19,11 +20,11 @@ export const Header = ({ location }) => (
           <ul className="nav navbar-nav">
             {
               HEADER_ROUTES.map((item, i) => {
-                const path = createRoute(`/${item}`)
+                const path = createRoute(item === '/' ? item : `/${item}`)
                 return <HeaderItem
                   key={i}
                   path={path}
-                  name={HEADER_ROUTES_LABELS[item]}
+                  name={HEADER_ROUTES_LABELS[item] || item}
                   isActive={path === location.pathname}
                 />
               })

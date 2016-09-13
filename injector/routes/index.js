@@ -1,5 +1,5 @@
-import routeEdit from './routeEdit'
+import routeCRUD from './routeCRUD'
 
 export default {
-  'route-edit': routeEdit
+  'route-crud': routeCRUD
 }

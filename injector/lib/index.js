@@ -1,5 +1,7 @@
 import fs from 'fs'
 import recast from 'recast'
+import _debug from 'debug'
+const debug = _debug('app:injector')
 
 /**
  * [injector]
@@ -13,7 +15,7 @@ export default function injector(filename, handler) {
 
       fs.writeFile(filename, parser(data, handler), 'utf-8', function (err) {
         if (err) throw Error(err)
-        console.log(`injector: file modified ${filename}`)
+        debug(`file modified ${filename}`)
         resolve(filename)
       })
     })

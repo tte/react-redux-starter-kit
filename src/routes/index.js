@@ -6,7 +6,7 @@ export const createRoutes = store => ({
   path: '/',
   component: CoreLayout,
   indexRoute: Home,
-  childRoutes: [Posts(store), PostsEditRoute(store)],
+  childRoutes: [Posts(store), PostsEditRoute(store)]
 })
 
 export default createRoutes

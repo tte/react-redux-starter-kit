@@ -8,7 +8,7 @@ export const CoreLayout = (props) => {
   return (
     <div>
       <Header location={location}/>
-      <div className="container__main">
+      <div className="container">
         {children}
       </div>
     </div>

@@ -41,5 +41,8 @@
     "no-underscore-dangle": 0,
     "new-cap": 0,
     "no-param-reassign": 1,
+    "multiline-ternary": ["error", "always"],
+    "operator-linebreak": ["error", "before", { "overrides": { "?": "before", ":": "before" } }],
+    "comma-dangle": ["error", "never"]
   },
 }

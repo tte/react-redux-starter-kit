@@ -21,7 +21,7 @@
     "deploy:dev": "better-npm-run deploy:dev",
     "deploy:prod": "better-npm-run deploy:prod",
     "codecov": "cat coverage/*/lcov.info | codecov",
-    "inject": "babel-node injector/index.js",
+    "inject": "better-npm-run inject",
     "generate": "better-npm-run generate"
   },
   "betterScripts": {
@@ -55,6 +55,13 @@
       "command": "npm run deploy",
       "env": {
         "NODE_ENV": "production",
+        "DEBUG": "app:*"
+      }
+    },
+    "inject": {
+      "command": "babel-node injector/index.js",
+      "env": {
+        "NODE_ENV": "development",
         "DEBUG": "app:*"
       }
     },

@@ -6,6 +6,7 @@ import { ROUTE_PREFIX } from '../constants'
  * @return {String}
  */
 export function createRoute(route) {
+  if(route === '/') route = ''
   return ROUTE_PREFIX.length
     ? `/${ROUTE_PREFIX}${route}`
     : route
