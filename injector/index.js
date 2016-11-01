@@ -26,7 +26,7 @@ function validate() {
 
   if (blueprint) debug('  - blueprint: %s', blueprint)
   if (name) debug('  - name: %s', validateName ? name : '<not-set>')
-  debug('  - lint: %s', !!lint) // /^(true|false)$/i,
+  debug('  - lint: %s', !!lint)
 
   if(blueprint && name && validateName)
     handle(blueprint, name, !!lint)

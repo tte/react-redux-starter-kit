@@ -1,7 +1,7 @@
 export const APP_NAME = 'Your app name'
 export const BASE_URL = (process.env.NODE_ENV === 'production' ? window.location.origin : 'https://jsonplaceholder.typicode.com')
 export const API_URL = `${BASE_URL}`
-export const ROUTE_PREFIX = 'admin'
+export const ROUTE_PREFIX = ''
 export const LOCAL_STORAGE_CREDENTIALS = '_your_awesome_safe_name'
 export const SORT_BY_FIELD = 'SORT_BY_FIELD'
 export const SORT_TYPE_ASC = 'asc'
@@ -20,7 +20,7 @@ export const REDUCERS_INIT_STATE = {
   }
 }
 
-export const HEADER_ROUTES = ['/', 'posts']
+export const HEADER_ROUTES = ['/', 'posts', 'users']
 
 export const HEADER_ROUTES_LABELS = {
   '/': 'Home'

@@ -111,6 +111,18 @@ While developing, you will probably rely mostly on `npm start`; however, there a
 |`lint`|Lint all `.js` files.|
 |`lint:fix`|Lint and fix all `.js` files. [Read more on this](http://eslint.org/docs/user-guide/command-line-interface.html#fix).|
 
+### Using generator
+```
+npm run generate -- --name Users --blueprint route-crud
+```
+Try `/users` route. You should see grid w/ actions field.
+Then follow `src/routes/Users` and configure grid fields by editing `constants/index`:
+```
+// src/routes/Users/constants/index.js
+
+export const USERS__COLUMNS = ['id', 'name', 'phone']
+```
+
 ## Application Structure
 
 The application structure presented in this boilerplate is **fractal**, where functionality is grouped primarily by feature rather than file type. Please note, however, that this structure is only meant to serve as a guide, it is by no means prescriptive. That said, it aims to represent generally accepted guidelines and patterns for building scalable applications. If you wish to read more about this pattern, please check out this [awesome writeup](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure) by [Justin Greenberg](https://github.com/justingreenberg).

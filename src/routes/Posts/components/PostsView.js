@@ -20,7 +20,6 @@ export default function PostsView(props) {
 
   return (
     <div>
-      <Controls {...props}/>
       <Table
         items={items}
         columns={constants.POSTS__COLUMNS}
